@@ -35,9 +35,9 @@ static const CGFloat kLayoutImageScrollViewAnimationDuration = 0.25;
 
 // K is a constant such that the accumulated error of our floating-point computations is definitely bounded by K units in the last place.
 #ifdef CGFLOAT_IS_DOUBLE
-    static const CGFloat kK = 9;
+static const CGFloat kK = 9;
 #else
-    static const CGFloat kK = 0;
+static const CGFloat kK = 0;
 #endif
 
 @interface RSKImageCropViewController () <UIGestureRecognizerDelegate>
@@ -164,12 +164,12 @@ static const CGFloat kLayoutImageScrollViewAnimationDuration = 0.25;
 - (void)chooseButtonConst
 {
     NSLayoutConstraint *right = [NSLayoutConstraint constraintWithItem:self.chooseButton
-                                                            attribute:NSLayoutAttributeRight
-                                                            relatedBy:NSLayoutRelationEqual
-                                                               toItem:self.view
-                                                            attribute:NSLayoutAttributeRight
-                                                           multiplier:1
-                                                             constant:0];
+                                                             attribute:NSLayoutAttributeRight
+                                                             relatedBy:NSLayoutRelationEqual
+                                                                toItem:self.view
+                                                             attribute:NSLayoutAttributeRight
+                                                            multiplier:1
+                                                              constant:0];
     NSLayoutConstraint *bottom = [NSLayoutConstraint constraintWithItem:self.chooseButton
                                                               attribute:NSLayoutAttributeBottom
                                                               relatedBy:NSLayoutRelationEqual
@@ -206,26 +206,26 @@ static const CGFloat kLayoutImageScrollViewAnimationDuration = 0.25;
                                                            multiplier:1
                                                              constant:0];
     NSLayoutConstraint *bottom = [NSLayoutConstraint constraintWithItem:self.cancelButton
-                                                            attribute:NSLayoutAttributeBottom
-                                                            relatedBy:NSLayoutRelationEqual
-                                                               toItem:self.view
-                                                            attribute:NSLayoutAttributeBottom
-                                                           multiplier:1
-                                                             constant:0];
-    NSLayoutConstraint *width = [NSLayoutConstraint constraintWithItem:self.cancelButton
-                                                              attribute:NSLayoutAttributeWidth
+                                                              attribute:NSLayoutAttributeBottom
                                                               relatedBy:NSLayoutRelationEqual
                                                                  toItem:self.view
-                                                              attribute:NSLayoutAttributeWidth
-                                                             multiplier:0.5
+                                                              attribute:NSLayoutAttributeBottom
+                                                             multiplier:1
                                                                constant:0];
-    NSLayoutConstraint *height = [NSLayoutConstraint constraintWithItem:self.cancelButton
-                                                             attribute:NSLayoutAttributeHeight
+    NSLayoutConstraint *width = [NSLayoutConstraint constraintWithItem:self.cancelButton
+                                                             attribute:NSLayoutAttributeWidth
                                                              relatedBy:NSLayoutRelationEqual
-                                                                toItem:nil
-                                                             attribute:0
-                                                            multiplier:1
-                                                              constant:40];
+                                                                toItem:self.view
+                                                             attribute:NSLayoutAttributeWidth
+                                                            multiplier:0.5
+                                                              constant:0];
+    NSLayoutConstraint *height = [NSLayoutConstraint constraintWithItem:self.cancelButton
+                                                              attribute:NSLayoutAttributeHeight
+                                                              relatedBy:NSLayoutRelationEqual
+                                                                 toItem:nil
+                                                              attribute:0
+                                                             multiplier:1
+                                                               constant:40];
     
     [self.cancelButton addConstraints:@[height]];
     [self.view addConstraints:@[left, bottom, width]];
@@ -314,49 +314,49 @@ static const CGFloat kLayoutImageScrollViewAnimationDuration = 0.25;
         // The button "Cancel".
         // --------------------
         
-//        constant = self.portraitCancelButtonLeadingAndCropViewLeadingHorizontalSpace;
-//        self.cancelButtonLeadingConstraint = [NSLayoutConstraint constraintWithItem:self.cancelButton attribute:NSLayoutAttributeLeading relatedBy:NSLayoutRelationEqual
-//                                                                             toItem:self.view attribute:NSLayoutAttributeLeading multiplier:1.0f
-//                                                                           constant:constant];
-//        [self.view addConstraint:self.cancelButtonLeadingConstraint];
-//
-//        constant = self.portraitCropViewBottomAndCancelButtonBottomVerticalSpace;
-//        self.cancelButtonBottomConstraint = [NSLayoutConstraint constraintWithItem:self.view attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual
-//                                                                            toItem:self.cancelButton attribute:NSLayoutAttributeBottom multiplier:1.0f
-//                                                                          constant:constant];
-//        [self.view addConstraint:self.cancelButtonBottomConstraint];
+        //        constant = self.portraitCancelButtonLeadingAndCropViewLeadingHorizontalSpace;
+        //        self.cancelButtonLeadingConstraint = [NSLayoutConstraint constraintWithItem:self.cancelButton attribute:NSLayoutAttributeLeading relatedBy:NSLayoutRelationEqual
+        //                                                                             toItem:self.view attribute:NSLayoutAttributeLeading multiplier:1.0f
+        //                                                                           constant:constant];
+        //        [self.view addConstraint:self.cancelButtonLeadingConstraint];
+        //
+        //        constant = self.portraitCropViewBottomAndCancelButtonBottomVerticalSpace;
+        //        self.cancelButtonBottomConstraint = [NSLayoutConstraint constraintWithItem:self.view attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual
+        //                                                                            toItem:self.cancelButton attribute:NSLayoutAttributeBottom multiplier:1.0f
+        //                                                                          constant:constant];
+        //        [self.view addConstraint:self.cancelButtonBottomConstraint];
         
         // --------------------
         // The button "Choose".
         // --------------------
         
-//        constant = self.portraitCropViewTrailingAndChooseButtonTrailingHorizontalSpace;
-//        self.chooseButtonTrailingConstraint = [NSLayoutConstraint constraintWithItem:self.view attribute:NSLayoutAttributeTrailing relatedBy:NSLayoutRelationEqual
-//                                                                              toItem:self.chooseButton attribute:NSLayoutAttributeTrailing multiplier:1.0f
-//                                                                            constant:constant];
-//        [self.view addConstraint:self.chooseButtonTrailingConstraint];
-//
-//        constant = self.portraitCropViewBottomAndChooseButtonBottomVerticalSpace;
-//        self.chooseButtonBottomConstraint = [NSLayoutConstraint constraintWithItem:self.view attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual
-//                                                                            toItem:self.chooseButton attribute:NSLayoutAttributeBottom multiplier:1.0f
-//                                                                          constant:constant];
-//        [self.view addConstraint:self.chooseButtonBottomConstraint];
+        //        constant = self.portraitCropViewTrailingAndChooseButtonTrailingHorizontalSpace;
+        //        self.chooseButtonTrailingConstraint = [NSLayoutConstraint constraintWithItem:self.view attribute:NSLayoutAttributeTrailing relatedBy:NSLayoutRelationEqual
+        //                                                                              toItem:self.chooseButton attribute:NSLayoutAttributeTrailing multiplier:1.0f
+        //                                                                            constant:constant];
+        //        [self.view addConstraint:self.chooseButtonTrailingConstraint];
+        //
+        //        constant = self.portraitCropViewBottomAndChooseButtonBottomVerticalSpace;
+        //        self.chooseButtonBottomConstraint = [NSLayoutConstraint constraintWithItem:self.view attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual
+        //                                                                            toItem:self.chooseButton attribute:NSLayoutAttributeBottom multiplier:1.0f
+        //                                                                          constant:constant];
+        //        [self.view addConstraint:self.chooseButtonBottomConstraint];
         
         self.didSetupConstraints = YES;
     } else {
-        if ([self isPortraitInterfaceOrientation]) {
-            self.moveAndScaleLabelTopConstraint.constant = self.portraitMoveAndScaleLabelTopAndCropViewTopVerticalSpace;
-            self.cancelButtonBottomConstraint.constant = self.portraitCropViewBottomAndCancelButtonBottomVerticalSpace;
-            self.cancelButtonLeadingConstraint.constant = self.portraitCancelButtonLeadingAndCropViewLeadingHorizontalSpace;
-            self.chooseButtonBottomConstraint.constant = self.portraitCropViewBottomAndChooseButtonBottomVerticalSpace;
-            self.chooseButtonTrailingConstraint.constant = self.portraitCropViewTrailingAndChooseButtonTrailingHorizontalSpace;
-        } else {
-            self.moveAndScaleLabelTopConstraint.constant = self.landscapeMoveAndScaleLabelTopAndCropViewTopVerticalSpace;
-            self.cancelButtonBottomConstraint.constant = self.landscapeCropViewBottomAndCancelButtonBottomVerticalSpace;
-            self.cancelButtonLeadingConstraint.constant = self.landscapeCancelButtonLeadingAndCropViewLeadingHorizontalSpace;
-            self.chooseButtonBottomConstraint.constant = self.landscapeCropViewBottomAndChooseButtonBottomVerticalSpace;
-            self.chooseButtonTrailingConstraint.constant = self.landscapeCropViewTrailingAndChooseButtonTrailingHorizontalSpace;
-        }
+        //        if ([self isPortraitInterfaceOrientation]) {
+        //            self.moveAndScaleLabelTopConstraint.constant = self.portraitMoveAndScaleLabelTopAndCropViewTopVerticalSpace;
+        //            self.cancelButtonBottomConstraint.constant = self.portraitCropViewBottomAndCancelButtonBottomVerticalSpace;
+        //            self.cancelButtonLeadingConstraint.constant = self.portraitCancelButtonLeadingAndCropViewLeadingHorizontalSpace;
+        //            self.chooseButtonBottomConstraint.constant = self.portraitCropViewBottomAndChooseButtonBottomVerticalSpace;
+        //            self.chooseButtonTrailingConstraint.constant = self.portraitCropViewTrailingAndChooseButtonTrailingHorizontalSpace;
+        //        } else {
+        //            self.moveAndScaleLabelTopConstraint.constant = self.landscapeMoveAndScaleLabelTopAndCropViewTopVerticalSpace;
+        //            self.cancelButtonBottomConstraint.constant = self.landscapeCropViewBottomAndCancelButtonBottomVerticalSpace;
+        //            self.cancelButtonLeadingConstraint.constant = self.landscapeCancelButtonLeadingAndCropViewLeadingHorizontalSpace;
+        //            self.chooseButtonBottomConstraint.constant = self.landscapeCropViewBottomAndChooseButtonBottomVerticalSpace;
+        //            self.chooseButtonTrailingConstraint.constant = self.landscapeCropViewTrailingAndChooseButtonTrailingHorizontalSpace;
+        //        }
     }
 }
 
@@ -1064,3 +1064,4 @@ static const CGFloat kLayoutImageScrollViewAnimationDuration = 0.25;
 }
 
 @end
+
